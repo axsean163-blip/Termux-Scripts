@@ -14,18 +14,17 @@ echo "To start Ubuntu, run: proot-distro login ubuntu"
 
 echo "########################################################"
 
-echo "An alias Of 'ubuntu' can be added for quicker logins. In this case you will only have to type \n'ubuntu' \n indead of\n 'proot-distro login ubuntu'.
-"
+echo -e "An alias of 'ubuntu' can be added for quicker logins.\n"
+echo -e "Then you'll only type: ubuntu"
+echo -e "Instead of: proot-distro login ubuntu\n"
 
 read -p "Add 'ubuntu' alias for quicker logins? (Y/n): " ans
 ans=${ans:-y}
 
 if [[ "$ans" =~ ^[Yy]$ ]]; then
-    echo 'alias="proot-distro login Ubuntu"'>>~/.bashrc
-    echo "Alias 'ununtu' Added! For now on just yoe in that to begin:
-
-~ $ ubuntu"
+    echo 'alias ubuntu="proot-distro login ubuntu"' >> ~/.bashrc
+    echo -e "Alias 'ubuntu' added!\n"
+    echo "~ \$ ubuntu"
 else
-    echo "Update canceled."
+    echo "To start Ubuntu, run: proot-distro login ubuntu"
 fi
-
